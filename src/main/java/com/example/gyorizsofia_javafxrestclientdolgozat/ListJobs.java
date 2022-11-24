@@ -36,7 +36,7 @@ public class ListJobs extends ProjectController{
         titleCol.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
         locationCol.setCellValueFactory(new PropertyValueFactory<>("jobLocation"));
         scoreCol.setCellValueFactory(new PropertyValueFactory<>("jobScore"));
-        workingCol.setCellValueFactory(new PropertyValueFactory<>("isWorking"));
+        workingCol.setCellValueFactory(new PropertyValueFactory<>("working"));
         Platform.runLater(() -> {
             try {
                 fetchData();
