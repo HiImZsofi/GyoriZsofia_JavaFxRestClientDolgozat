@@ -6,30 +6,25 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert;
 
 public class ProjectController {
-    @FXML
-    public Button insertButton;
-    @FXML
-    public Button updateButton;
-    @FXML
-    public Button deleteButton;
-    @FXML
-    public TableView jobTable;
-    @FXML
-    public TableColumn titleCol;
-    @FXML
-    public TableColumn locationCol;
-    @FXML
-    public TableColumn nameCol;
+    protected void error(String headerText) {
+        error(headerText, "");
+    }
 
-    @FXML
-    public void insertClick(ActionEvent actionEvent) {
+    protected void error(String headerText, String contentText) {
+        alert(Alert.AlertType.ERROR, headerText, contentText);
     }
-    @FXML
-    public void updateClick(ActionEvent actionEvent) {
+
+    protected void warning(String headerText) {
+        alert(Alert.AlertType.WARNING, headerText, "");
     }
-    @FXML
-    public void deleteClick(ActionEvent actionEvent) {
+
+    protected void alert(Alert.AlertType alertType, String headerText, String contentText) {
+        Alert alert = new Alert(alertType);
+        alert.setHeaderText(headerText);
+        alert.setContentText(contentText);
+        alert.showAndWait();
     }
 }
