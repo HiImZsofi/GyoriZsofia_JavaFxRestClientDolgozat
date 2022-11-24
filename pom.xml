@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.gyorizsofia_javafxrestclientdolgozat/com.example.gyorizsofia_javafxrestclientdolgozat.HelloApplication
+                                com.example.gyorizsofia_javafxrestclientdolgozat/com.example.gyorizsofia_javafxrestclientdolgozat.App
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
