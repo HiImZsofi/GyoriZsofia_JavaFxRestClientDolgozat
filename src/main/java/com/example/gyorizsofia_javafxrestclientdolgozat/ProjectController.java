@@ -9,6 +9,21 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.Alert;
 
 public class ProjectController {
+    @FXML
+    private Button insertButton;
+    @FXML
+    private Button updateButton;
+    @FXML
+    private Button deleteButton;
+    @FXML
+    private TableView jobTable;
+    @FXML
+    private TableColumn titleCol;
+    @FXML
+    private TableColumn locationCol;
+    @FXML
+    private TableColumn nameCol;
+
     protected void error(String headerText) {
         error(headerText, "");
     }
@@ -26,5 +41,17 @@ public class ProjectController {
         alert.setHeaderText(headerText);
         alert.setContentText(contentText);
         alert.showAndWait();
+    }
+
+    @FXML
+    public void insertClick(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void updateClick(ActionEvent actionEvent) {
+    }
+
+    @FXML
+    public void deleteClick(ActionEvent actionEvent) {
     }
 }

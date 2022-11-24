@@ -115,4 +115,32 @@ public class ListJobs extends ProjectController{
             error("Could not load form", e.getMessage());
         }
     }
+
+    @FXML
+    public void deleteClick(ActionEvent actionEvent) {
+        int selectedIndex = jobTable.getSelectionModel().getSelectedIndex();
+        if (selectedIndex == -1) {
+            warning("Select something first");
+            return;
+        }
+
+        Job selected = (Job) jobTable.getSelectionModel().getSelectedItem();
+        Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmation.setHeaderText(String.format("Are you sure you want to delete %s?", selected.getName()));
+        Optional<ButtonType> optionalButtonType = confirmation.showAndWait();
+        if (optionalButtonType.isEmpty()) {
+            System.err.println("Something went wrong");
+            return;
+        }
+        ButtonType clickedButton = optionalButtonType.get();
+        if (clickedButton.equals(ButtonType.OK)) {
+            String url = App.BASE_URL + "/" + selected.getId();
+            try {
+                RequestHandler.delete(url);
+                fetchData();
+            } catch (IOException e) {
+                error("Something went wrong");
+            }
+        }
+    }
 }
