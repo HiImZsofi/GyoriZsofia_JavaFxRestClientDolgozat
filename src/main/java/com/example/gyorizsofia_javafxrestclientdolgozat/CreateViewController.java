@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 
@@ -18,12 +19,15 @@ public class CreateViewController {
     public TextField locationField;
     public Spinner scoreField;
     public Button submitButton;
+    public CheckBox workingField;
 
     public void submitClick(ActionEvent actionEvent) {
         String name = nameField.getText().trim();
         String title = titleField.getText().trim();
         String location = locationField.getText().trim();
         int score = (int) scoreField.getValue();
+        boolean working = workingField.isSelected();
+
         if (name.isEmpty()) {
             warning("Name is required");
             return;
@@ -36,7 +40,7 @@ public class CreateViewController {
             warning("Job location is required");
             return;
         }
-        Job newJob = new Job(0, name, title, location, score);
+        Job newJob = new Job(0, name, title, location, score, working);
         Gson converter = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
         String json = converter.toJson(newJob);
         try {
@@ -47,6 +51,7 @@ public class CreateViewController {
                 titleField.setText("");
                 locationField.setText("");
                 scoreField.getValueFactory().setValue(0);
+                workingField.setSelected(false);
             } else {
                 String content = response.getContent();
                 error(content);

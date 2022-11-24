@@ -28,6 +28,7 @@ public class ListJobs extends ProjectController{
     @FXML
     public TableColumn nameCol;
     public TableColumn scoreCol;
+    public TableColumn workingCol;
 
     @FXML
     private void initialize() {
@@ -35,6 +36,7 @@ public class ListJobs extends ProjectController{
         titleCol.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
         locationCol.setCellValueFactory(new PropertyValueFactory<>("jobLocation"));
         scoreCol.setCellValueFactory(new PropertyValueFactory<>("jobScore"));
+        workingCol.setCellValueFactory(new PropertyValueFactory<>("isWorking"));
         Platform.runLater(() -> {
             try {
                 fetchData();

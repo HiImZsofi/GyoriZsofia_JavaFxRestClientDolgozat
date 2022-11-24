@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.CheckBox?>
 <GridPane hgap="20.0" prefHeight="480.0" prefWidth="640.0" vgap="20.0" xmlns="http://javafx.com/javafx"
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="com.example.gyorizsofia_javafxrestclientdolgozat.UpdateViewController">
@@ -34,6 +35,7 @@
         <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
         <TextField fx:id="locationField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
         <Spinner fx:id="scoreField" prefWidth="2000.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <CheckBox fx:id="workingField" prefWidth="2000.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
         <Button fx:id="updateButton" mnemonicParsing="false" onAction="#updateClick" prefWidth="Infinity" text="Update"
                 GridPane.columnSpan="2" GridPane.rowIndex="3"/>
     </children>

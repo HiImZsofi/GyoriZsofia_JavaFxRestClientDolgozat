@@ -3,10 +3,7 @@ package com.example.gyorizsofia_javafxrestclientdolgozat;
 import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.SpinnerValueFactory;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 import java.io.IOException;
 
@@ -19,6 +16,7 @@ public class UpdateViewController {
     public TextField locationField;
     public Button updateButton;
     public Spinner scoreField;
+    public CheckBox workingField;
     private Job job;
 
     public void setPerson(Job job) {
@@ -27,6 +25,7 @@ public class UpdateViewController {
         titleField.setText(this.job.getTitle());
         locationField.setText(this.job.getLocation());
         scoreField.getValueFactory().setValue(this.job.getScore());
+        workingField.setSelected(false);
     }
 
     @FXML
@@ -41,6 +40,7 @@ public class UpdateViewController {
         String title = titleField.getText().trim();
         String location = locationField.getText().trim();
         int score = (int) scoreField.getValue();
+        boolean working = workingField.isSelected();
         if (name.isEmpty()) {
             warning("Name is required");
             return;
@@ -57,6 +57,7 @@ public class UpdateViewController {
         this.job.setTitle(title);
         this.job.setLocation(location);
         this.job.setScore(score);
+        this.job.setIsworking(working);
         Gson converter = new Gson();
         String json = converter.toJson(this.job);
         try {

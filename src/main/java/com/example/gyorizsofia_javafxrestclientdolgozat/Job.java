@@ -10,15 +10,18 @@ public class Job {
     private String location;
     @Expose
     private String name;
-
+    @Expose
     private int score;
+    @Expose
+    private boolean isworking;
 
-    public Job(int id, String title, String location, String name, int score) {
+    public Job(int id, String title, String location, String name, int score, boolean isworking) {
         this.id = id;
         this.title = title;
         this.location = location;
         this.name = name;
         this.score = score;
+        this.isworking = isworking;
     }
 
     public int getId() {
@@ -55,5 +58,13 @@ public class Job {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public boolean isIsworking() {
+        return isworking;
+    }
+
+    public void setIsworking(boolean isworking) {
+        this.isworking = isworking;
     }
 }

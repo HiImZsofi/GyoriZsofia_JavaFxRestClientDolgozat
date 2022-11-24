@@ -25,6 +25,7 @@
                 <TableColumn fx:id="locationCol" minWidth="50.0" prefWidth="250.0" text="Location" />
                 <TableColumn fx:id="nameCol" minWidth="50.0" prefWidth="250.0" text="Name" />
                 <TableColumn fx:id="scoreCol" minWidth="50.0" prefWidth="250.0" text="Credit Score" />
+                <TableColumn fx:id="workingCol" minWidth="50.0" prefWidth="250.0" text="Is working" />
             </columns>
         </TableView>
     </children>
