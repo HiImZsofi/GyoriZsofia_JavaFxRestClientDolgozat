@@ -11,11 +11,14 @@ public class Job {
     @Expose
     private String name;
 
-    public Job(int id, String title, String location, String name) {
+    private int score;
+
+    public Job(int id, String title, String location, String name, int score) {
         this.id = id;
         this.title = title;
         this.location = location;
         this.name = name;
+        this.score = score;
     }
 
     public int getId() {
@@ -44,5 +47,13 @@ public class Job {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
     }
 }

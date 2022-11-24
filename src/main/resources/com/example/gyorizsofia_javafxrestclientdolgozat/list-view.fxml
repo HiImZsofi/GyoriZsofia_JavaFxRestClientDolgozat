@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.gyorizsofia_javafxrestclientdolgozat.ProjectController">
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="com.example.gyorizsofia_javafxrestclientdolgozat.ListJobs">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -24,6 +24,7 @@
                 <TableColumn fx:id="titleCol" minWidth="50.0" prefWidth="250.0" text="Title" />
                 <TableColumn fx:id="locationCol" minWidth="50.0" prefWidth="250.0" text="Location" />
                 <TableColumn fx:id="nameCol" minWidth="50.0" prefWidth="250.0" text="Name" />
+                <TableColumn fx:id="scoreCol" minWidth="50.0" prefWidth="250.0" text="Credit Score" />
             </columns>
         </TableView>
     </children>

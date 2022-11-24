@@ -43,15 +43,5 @@ public class ProjectController {
         alert.showAndWait();
     }
 
-    @FXML
-    public void insertClick(ActionEvent actionEvent) {
-    }
 
-    @FXML
-    public void updateClick(ActionEvent actionEvent) {
-    }
-
-    @FXML
-    public void deleteClick(ActionEvent actionEvent) {
-    }
 }
