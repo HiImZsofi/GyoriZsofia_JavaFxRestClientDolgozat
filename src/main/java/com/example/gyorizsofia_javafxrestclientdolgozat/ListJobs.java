@@ -30,7 +30,6 @@ public class ListJobs extends ProjectController{
 
     @FXML
     private void initialize() {
-        // getName() függvény eredményét írja ki
         nameCol.setCellValueFactory(new PropertyValueFactory<>("jobName"));
         titleCol.setCellValueFactory(new PropertyValueFactory<>("jobTitle"));
         locationCol.setCellValueFactory(new PropertyValueFactory<>("jobLocation"));
