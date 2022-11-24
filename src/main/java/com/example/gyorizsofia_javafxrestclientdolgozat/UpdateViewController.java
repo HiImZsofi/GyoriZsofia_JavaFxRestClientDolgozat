@@ -10,7 +10,7 @@ import java.io.IOException;
 import static jdk.internal.org.jline.utils.Log.error;
 import static sun.security.ssl.SSLLogger.warning;
 
-public class UpdateViewController {
+public class UpdateViewController extends ProjectController{
     public TextField nameField;
     public TextField titleField;
     public TextField locationField;
@@ -21,10 +21,10 @@ public class UpdateViewController {
 
     public void setPerson(Job job) {
         this.job = job;
-        nameField.setText(this.job.getName());
-        titleField.setText(this.job.getTitle());
-        locationField.setText(this.job.getLocation());
-        scoreField.getValueFactory().setValue(this.job.getScore());
+        nameField.setText(this.job.getJobName());
+        titleField.setText(this.job.getJobTitle());
+        locationField.setText(this.job.getJobLocation());
+        scoreField.getValueFactory().setValue(this.job.getJobScore());
         workingField.setSelected(false);
     }
 
@@ -53,11 +53,11 @@ public class UpdateViewController {
             warning("Employee location is required");
             return;
         }
-        this.job.setName(name);
-        this.job.setTitle(title);
-        this.job.setLocation(location);
-        this.job.setScore(score);
-        this.job.setIsworking(working);
+        this.job.setJobName(name);
+        this.job.setJobTitle(title);
+        this.job.setJobLocation(location);
+        this.job.setJobScore(score);
+        this.job.setWorking(working);
         Gson converter = new Gson();
         String json = converter.toJson(this.job);
         try {

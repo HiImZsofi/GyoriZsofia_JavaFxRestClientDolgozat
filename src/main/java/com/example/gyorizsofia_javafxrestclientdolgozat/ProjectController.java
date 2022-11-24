@@ -23,6 +23,10 @@ public class ProjectController {
     private TableColumn locationCol;
     @FXML
     private TableColumn nameCol;
+    @FXML
+    private TableColumn scoreCol;
+    @FXML
+    private TableColumn workingCol;
 
     protected void error(String headerText) {
         error(headerText, "");

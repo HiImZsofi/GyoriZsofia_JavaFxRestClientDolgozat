@@ -3,23 +3,26 @@ package com.example.gyorizsofia_javafxrestclientdolgozat;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.io.IOException;
 
 import static jdk.internal.org.jline.utils.Log.error;
 import static sun.security.ssl.SSLLogger.warning;
 
-public class CreateViewController {
+public class CreateViewController extends ProjectController{
     public TextField nameField;
     public TextField titleField;
     public TextField locationField;
-    public Spinner scoreField;
+    public Spinner<Integer> scoreField;
     public Button submitButton;
     public CheckBox workingField;
+
+    public void initialize(){
+        SpinnerValueFactory.IntegerSpinnerValueFactory valueFactory =
+                new SpinnerValueFactory.IntegerSpinnerValueFactory(0,1000,0);
+        scoreField.setValueFactory(valueFactory);
+    }
 
     public void submitClick(ActionEvent actionEvent) {
         String name = nameField.getText().trim();

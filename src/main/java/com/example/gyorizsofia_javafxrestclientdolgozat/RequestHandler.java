@@ -9,6 +9,9 @@ public final class RequestHandler {
     public static Response get(String url) throws IOException {
         HttpURLConnection connection = setupConnection(url);
         connection.setRequestMethod("GET");
+        connection.setConnectTimeout(10000);
+        connection.setReadTimeout(10000);
+        connection.setRequestProperty("Accept","application/json");
         return getResponse(connection);
     }
 

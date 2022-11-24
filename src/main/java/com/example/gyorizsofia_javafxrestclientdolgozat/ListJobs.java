@@ -130,7 +130,7 @@ public class ListJobs extends ProjectController{
 
         Job selected = (Job) jobTable.getSelectionModel().getSelectedItem();
         Alert confirmation = new Alert(Alert.AlertType.CONFIRMATION);
-        confirmation.setHeaderText(String.format("Are you sure you want to delete %s?", selected.getName()));
+        confirmation.setHeaderText(String.format("Are you sure you want to delete %s?", selected.getJobName()));
         Optional<ButtonType> optionalButtonType = confirmation.showAndWait();
         if (optionalButtonType.isEmpty()) {
             System.err.println("Something went wrong");

@@ -5,66 +5,66 @@ import com.google.gson.annotations.Expose;
 public class Job {
     private int id;
     @Expose
-    private String title;
+    private String jobTitle;
     @Expose
-    private String location;
+    private String jobLocation;
     @Expose
-    private String name;
+    private String jobName;
     @Expose
-    private int score;
+    private int jobScore;
     @Expose
-    private boolean isworking;
+    private boolean isWorking;
 
-    public Job(int id, String title, String location, String name, int score, boolean isworking) {
+    public Job(int id, String title, String location, String name, int score, boolean isWorking) {
         this.id = id;
-        this.title = title;
-        this.location = location;
-        this.name = name;
-        this.score = score;
-        this.isworking = isworking;
+        this.jobTitle = title;
+        this.jobLocation = location;
+        this.jobName = name;
+        this.jobScore = score;
+        this.isWorking = isWorking;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
-    public String getLocation() {
-        return location;
+    public String getJobLocation() {
+        return jobLocation;
     }
 
-    public String getName() {
-        return name;
+    public String getJobName() {
+        return jobName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setJobLocation(String jobLocation) {
+        this.jobLocation = jobLocation;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setJobName(String jobName) {
+        this.jobName = jobName;
     }
 
-    public int getScore() {
-        return score;
+    public int getJobScore() {
+        return jobScore;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setJobScore(int jobScore) {
+        this.jobScore = jobScore;
     }
 
-    public boolean isIsworking() {
-        return isworking;
+    public boolean isWorking() {
+        return isWorking;
     }
 
-    public void setIsworking(boolean isworking) {
-        this.isworking = isworking;
+    public void setWorking(boolean working) {
+        this.isWorking = working;
     }
 }
